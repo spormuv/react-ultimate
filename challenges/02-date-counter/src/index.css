@@ -1,0 +1,28 @@
+body {
+  background-color: aliceblue;
+}
+.app {
+  font-size: 1.2rem;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.btn {
+  padding: 1rem;
+  font-size: inherit;
+  border-radius: 10px;
+}
+
+.result {
+  text-decoration: underline;
+}
