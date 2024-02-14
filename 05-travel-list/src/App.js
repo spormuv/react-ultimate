@@ -133,10 +133,6 @@ function Stats({ items }) {
     );
 
   const numItems = items.length;
-  // const numPacked = items.reduce(
-  //   (acc, item) => (item.packed ? acc + 1 : acc),
-  //   0
-  // );
   const numPacked = items.filter(item => item.packed).length;
   const percentage = Math.round((numPacked / numItems) * 100 || 0);
 
