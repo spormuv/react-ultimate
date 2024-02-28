@@ -1,0 +1,10 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 20px;
+  background-color: #282a36;
+  color: #f8f8f2;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: 'JetBrainsMono Nerd Font', Courier, monospace;
+}
