@@ -54,7 +54,11 @@ body {
   max-width: 42rem;
   background-color: var(--color-background-500);
   border-radius: 0.9rem;
-  /* overflow: scroll; */
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
   position: relative;
 }
 
