@@ -9,10 +9,14 @@ const KEY = '13146fb9';
 export default function App() {
   const [query, setQuery] = useState('');
   const [movies, setMovies] = useState([]);
-  const [watched, setWatched] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const [selectedId, setSelectedId] = useState(null);
+
+  // const [watched, setWatched] = useState([]);
+  const [watched, setWatched] = useState(() =>
+    JSON.parse(localStorage.getItem('watched') || '[]')
+  );
 
   function handleSelectMovie(id) {
     setSelectedId(selectedId => (selectedId === id ? null : id));
@@ -24,11 +28,16 @@ export default function App() {
 
   function handleAddWatch(movie) {
     setWatched(watched => [...watched, movie]);
+    // localStorage.setItem('watched', JSON.stringify([...watched, movie]));
   }
 
   function handleDeleteWatched(id) {
     setWatched(watched => watched.filter(movie => movie.imdbID !== id));
   }
+
+  useEffect(() => {
+    localStorage.setItem('watched', JSON.stringify(watched));
+  }, [watched]);
 
   useEffect(
     function () {
@@ -241,6 +250,17 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
   // if (imdbRating > 8) [top, setIsTop] = useState(true);
   // if (imdbRating > 8) return <p>Greatest ever!</p>;
 
+  // const [isTop, setIsTop] = useState(imdbRating > 8);
+  // console.log(isTop);
+  // useEffect(() => {
+  //   setIsTop(imdbRating > 8);
+  // }, [imdbRating]);
+
+  const isTop = imdbRating > 8;
+  console.log(isTop);
+
+  // const [avgRating, setAvgRating] = useState(0);
+
   function handleAdd() {
     const newWatchedMovie = {
       imdbID: selectedId,
@@ -253,6 +273,9 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
     };
     onAddWatched(newWatchedMovie);
     onCloseMovie();
+
+    // setAvgRating(+imdbRating);
+    // setAvgRating(avgRating => (avgRating + userRating) / 2);
   }
 
   useEffect(
@@ -315,6 +338,8 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
               </p>
             </div>
           </header>
+
+          {/* <p>{avgRating}</p> */}
 
           <section>
             <div className="rating">
