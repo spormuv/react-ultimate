@@ -1,9 +1,12 @@
+import { useCities } from '../contexts/CitiesContext';
 import CityItem from './CityItem';
 import styles from './CityList.module.css';
 import Message from './Message';
 import Spinner from './Spinner';
 
-function CityList({ cities, loading }) {
+function CityList() {
+  const { cities, loading } = useCities();
+
   if (loading) return <Spinner />;
 
   if (!cities.length)
