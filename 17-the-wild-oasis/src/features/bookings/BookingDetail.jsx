@@ -12,6 +12,7 @@ import { HiArrowUpOnSquare } from 'react-icons/hi2';
 import { useNavigate } from 'react-router-dom';
 import { useMoveBack } from '../../hooks/useMoveBack';
 import ConfirmDelete from '../../ui/ConfirmDelete';
+import Empty from '../../ui/Empty';
 import Modal from '../../ui/Modal';
 import Spinner from '../../ui/Spinner';
 import { useCheckout } from '../check-in-out/useCheckout';
@@ -32,6 +33,7 @@ function BookingDetail() {
   const { isDeleting, deleteBooking } = useDeleteBooking();
 
   if (isLoading) return <Spinner />;
+  if (!booking) return <Empty resourceName='booking' />;
 
   const { status, id: bookingId } = booking;
 
