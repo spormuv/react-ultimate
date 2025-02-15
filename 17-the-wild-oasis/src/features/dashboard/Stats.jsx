@@ -9,16 +9,16 @@ import Stat from './Stat';
 
 const Stats = ({ bookings, confirmedStays, numDays, cabinCount }) => {
   // 1. Number of bookings
-  const numBookings = bookings.length;
+  const numBookings = bookings?.length;
   // 2. Total sales
-  const sales = bookings.reduce((acc, cur) => acc + cur.totalPrice, 0);
+  const sales = bookings?.reduce((acc, cur) => acc + cur.totalPrice, 0);
   // 3. Total check ins
-  const checkins = confirmedStays.length;
+  const checkins = confirmedStays?.length;
   // 4. Occupancy rate
   // num checked in nights / all available nights
   // (num days * num cabins)
   const occupation =
-    confirmedStays.reduce((acc, cur) => acc + cur.numNights, 0) /
+    confirmedStays?.reduce((acc, cur) => acc + cur.numNights, 0) /
     (numDays * cabinCount);
 
   return (
