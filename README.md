@@ -1,4 +1,4 @@
-# The Completed Ultimate React Course: React, Next.js, Redux & More [from Udemy](https://www.udemy.com/course/nodejs-express-mongodb-bootcamp/?couponCode=24T2MT111824)
+# The Completed Ultimate React Course: React, Next.js, Redux & More [from Udemy](https://www.udemy.com/course/the-ultimate-react-course/?couponCode=LETSLEARNNOW)
 
 The main projects are in the folders:
 
