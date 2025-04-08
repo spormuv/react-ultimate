@@ -1,6 +1,8 @@
 # The Wild Oasis Website
 
-The hotel website is accessible to visitors, where they can explore the lodges (cabins) and book reservations
+This is a customer-facing website of the "The Wild Oasis" small boutique hotel
+
+The website is accessible to visitors, where they can explore the lodges (cabins) and book stays
 
 Signing in requires using your Google account
 
