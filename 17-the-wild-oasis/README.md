@@ -1,6 +1,12 @@
 # The Wild Oasis
 
-React application built with React Query, Supabase, Recharts and Styled-Components Libs, implementing a dark mode
+"The Wild Oasis" is a small boutique hotel with 8
+luxurious wooden cabins
+
+This is an internal hotel management app to manage
+everything about the hotel: bookings, cabins and guests
+
+This React application has been built using React Query, Supabase, Recharts, and Styled-Components libraries, and is implementing a dark mode
 
 ## Info
 
